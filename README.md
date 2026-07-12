@@ -15,5 +15,4 @@ See [MODERATION.md](MODERATION.md) and the [module SDK](https://github.com/rslau
 scripts/generate-signing-key.sh registry-2026-01
 ```
 
-Never commit or paste the private key. Add its single base64 line to the protected `registry-production` environment as `RAYSLASH_REGISTRY_SIGNING_KEY`. Commit only the public key after removing the `keys/` ignore rule for that one public file or place it under a dedicated tracked `trusted-keys/` directory.
-
+Never commit or paste the private key. Add its single base64 line to the protected `registry-production` environment as `RAYSLASH_REGISTRY_SIGNING_KEY`. Public trust roots belong in [`trusted-keys/`](trusted-keys/).

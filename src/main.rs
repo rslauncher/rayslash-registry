@@ -10,7 +10,7 @@ use chrono::{DateTime, Utc};
 use clap::{Parser, Subcommand};
 use ed25519_dalek::{Signature, Signer, SigningKey, Verifier, VerifyingKey};
 use rand::rngs::OsRng;
-use rayslash_module_manifest::{MAX_PACKAGE_BYTES, ModuleManifest};
+use rayslash_module_manifest::{MAX_PACKAGE_BYTES, ModuleKind, ModuleManifest, Permissions};
 use semver::{Version, VersionReq};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -62,6 +62,12 @@ enum Command {
 #[serde(deny_unknown_fields)]
 struct Submission {
     id: String,
+    name: String,
+    description: String,
+    author: String,
+    license: String,
+    kind: ModuleKind,
+    permissions: Permissions,
     repository: String,
     official: bool,
     review_status: ReviewStatus,
@@ -210,6 +216,24 @@ fn build(
 
 fn validate_submission(submission: &Submission) -> Result<(), Box<dyn std::error::Error>> {
     rayslash_module_manifest::validate_module_id(&submission.id)?;
+    for (field, value, maximum) in [
+        ("name", submission.name.as_str(), 80),
+        ("description", submission.description.as_str(), 200),
+        ("author", submission.author.as_str(), 80),
+        ("license", submission.license.as_str(), 80),
+    ] {
+        let length = value.chars().count();
+        if length == 0
+            || length > maximum
+            || value.trim() != value
+            || value.chars().any(char::is_control)
+        {
+            return Err(format!("{} has invalid {field}", submission.id).into());
+        }
+    }
+    if submission.official != submission.author.eq_ignore_ascii_case("rayslash") {
+        return Err(format!("{} has inconsistent official author", submission.id).into());
+    }
     if !submission.repository.starts_with("https://github.com/")
         || submission.repository.contains(['?', '#'])
     {
@@ -310,6 +334,12 @@ fn validate_remote_package(
     let manifest = manifest.ok_or("package has no module.toml")?;
     manifest.validate(submission.official)?;
     if manifest.id != submission.id
+        || manifest.name != submission.name
+        || manifest.description != submission.description
+        || manifest.author != submission.author
+        || manifest.license != submission.license
+        || manifest.kind != submission.kind
+        || manifest.permissions != submission.permissions
         || manifest.version != version.version
         || manifest.api_version != version.api_version
         || manifest.source != submission.repository
