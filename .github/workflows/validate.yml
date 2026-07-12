@@ -20,4 +20,5 @@ jobs:
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test
       - run: cargo run --locked -- build --fetch --output public
-
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

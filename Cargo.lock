@@ -648,7 +648,7 @@ dependencies = [
 [[package]]
 name = "rayslash-module-manifest"
 version = "0.1.0"
-source = "git+https://github.com/rslauncher/rayslash-module-sdk?rev=ca2c4ab676e709c3f2f13dd184b8f53bbaf9b5c9#ca2c4ab676e709c3f2f13dd184b8f53bbaf9b5c9"
+source = "git+https://github.com/rslauncher/rayslash-module-sdk?rev=3c3e6b6c52bde4b9509a9b3702d8f46b2ced14bc#3c3e6b6c52bde4b9509a9b3702d8f46b2ced14bc"
 dependencies = [
  "semver",
  "serde",

@@ -29,6 +29,8 @@ enum Command {
     Build {
         #[arg(long, default_value = "modules")]
         modules: PathBuf,
+        #[arg(long, default_value = "revocations.toml")]
+        revocations: PathBuf,
         #[arg(long, default_value = "public")]
         output: PathBuf,
         #[arg(long, default_value = "https://rslauncher.github.io/rayslash-registry")]
@@ -118,7 +120,23 @@ struct RegistryRoot {
 struct Revocations {
     schema_version: u32,
     generated_at: DateTime<Utc>,
-    revoked: Vec<serde_json::Value>,
+    revoked: Vec<Revocation>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+#[serde(default, deny_unknown_fields)]
+struct RevocationSource {
+    revoked: Vec<Revocation>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord)]
+#[serde(deny_unknown_fields)]
+struct Revocation {
+    module_id: String,
+    version: Version,
+    sha256: String,
+    reason: String,
+    revoked_at: DateTime<Utc>,
 }
 
 fn main() {
@@ -132,11 +150,12 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
     match Cli::parse().command {
         Command::Build {
             modules,
+            revocations,
             output,
             base_url,
             key_id,
             fetch,
-        } => build(&modules, &output, &base_url, &key_id, fetch)?,
+        } => build(&modules, &revocations, &output, &base_url, &key_id, fetch)?,
         Command::Sign { root, private_key } => sign(&root, &private_key)?,
         Command::Verify { root, public_key } => verify(&root, &public_key)?,
         Command::Keygen { key_id, output } => keygen(&key_id, &output)?,
@@ -146,6 +165,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
 fn build(
     modules_dir: &Path,
+    revocations_path: &Path,
     output: &Path,
     base_url: &str,
     key_id: &str,
@@ -164,7 +184,7 @@ fn build(
             .collect::<Vec<_>>();
         paths.sort();
         for path in paths {
-            let submission: Submission = toml::from_str(&fs::read_to_string(&path)?)?;
+            let mut submission: Submission = toml::from_str(&fs::read_to_string(&path)?)?;
             validate_submission(&submission)?;
             if !ids.insert(submission.id.clone()) {
                 return Err(format!("duplicate module ID {}", submission.id).into());
@@ -173,6 +193,7 @@ fn build(
                 for version in &submission.versions {
                     validate_remote_package(&submission, version)?;
                 }
+                refresh_github_metadata(&mut submission)?;
             }
             modules.push(submission);
         }
@@ -184,10 +205,16 @@ fn build(
         generated_at,
         modules,
     };
+    let mut revoked = if revocations_path.exists() {
+        toml::from_str::<RevocationSource>(&fs::read_to_string(revocations_path)?)?.revoked
+    } else {
+        Vec::new()
+    };
+    validate_revocations(&mut revoked)?;
     let revocations = Revocations {
         schema_version: SCHEMA_VERSION,
         generated_at,
-        revoked: Vec::new(),
+        revoked,
     };
     let v1 = output.join("v1");
     fs::create_dir_all(&v1)?;
@@ -214,7 +241,45 @@ fn build(
     Ok(())
 }
 
+#[derive(Deserialize)]
+struct GitHubRepository {
+    stargazers_count: u64,
+    updated_at: DateTime<Utc>,
+    archived: bool,
+}
+
+fn refresh_github_metadata(submission: &mut Submission) -> Result<(), Box<dyn std::error::Error>> {
+    let repository = submission
+        .repository
+        .strip_prefix("https://github.com/")
+        .ok_or("repository is not on GitHub")?;
+    let mut request = ureq::get(&format!("https://api.github.com/repos/{repository}"))
+        .header("User-Agent", "rayslash-registry/1")
+        .header("Accept", "application/vnd.github+json")
+        .header("X-GitHub-Api-Version", "2022-11-28");
+    if let Ok(token) = std::env::var("GITHUB_TOKEN")
+        && !token.is_empty()
+    {
+        request = request.header("Authorization", &format!("Bearer {token}"));
+    }
+    let metadata: GitHubRepository =
+        serde_json::from_str(&request.call()?.into_body().read_to_string()?)?;
+    if metadata.archived {
+        return Err(format!("{} source repository is archived", submission.id).into());
+    }
+    submission.github_stars = metadata.stargazers_count;
+    submission.updated_at = metadata.updated_at;
+    Ok(())
+}
+
 fn validate_submission(submission: &Submission) -> Result<(), Box<dyn std::error::Error>> {
+    if submission.kind != ModuleKind::Wasm {
+        return Err(format!(
+            "{} uses declarative packages, which are reserved and unsupported by API v1",
+            submission.id
+        )
+        .into());
+    }
     rayslash_module_manifest::validate_module_id(&submission.id)?;
     for (field, value, maximum) in [
         ("name", submission.name.as_str(), 80),
@@ -282,6 +347,46 @@ fn validate_submission(submission: &Submission) -> Result<(), Box<dyn std::error
         if version.size == 0 || version.size > MAX_PACKAGE_BYTES {
             return Err(format!("{} {} has invalid size", submission.id, version.version).into());
         }
+    }
+    Ok(())
+}
+
+fn validate_revocations(
+    revocations: &mut Vec<Revocation>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    revocations.sort();
+    let mut previous = None;
+    for revocation in revocations {
+        rayslash_module_manifest::validate_module_id(&revocation.module_id)?;
+        if revocation.sha256.len() != 64
+            || !revocation
+                .sha256
+                .bytes()
+                .all(|byte| byte.is_ascii_hexdigit())
+            || revocation.reason.is_empty()
+            || revocation.reason.len() > 300
+            || revocation.reason.trim() != revocation.reason
+            || revocation.reason.chars().any(char::is_control)
+        {
+            return Err(format!(
+                "invalid revocation for {} {}",
+                revocation.module_id, revocation.version
+            )
+            .into());
+        }
+        let key = (
+            revocation.module_id.clone(),
+            revocation.version.clone(),
+            revocation.sha256.clone(),
+        );
+        if previous.as_ref() == Some(&key) {
+            return Err(format!(
+                "duplicate revocation for {} {}",
+                revocation.module_id, revocation.version
+            )
+            .into());
+        }
+        previous = Some(key);
     }
     Ok(())
 }
@@ -453,6 +558,7 @@ mod tests {
         fs::create_dir_all(base.join("modules")).unwrap();
         build(
             &base.join("modules"),
+            &base.join("revocations.toml"),
             &base.join("public"),
             "https://example.test",
             "test-key",

@@ -1,0 +1,27 @@
+id = "rayslash.time"
+name = "Time"
+description = "Show the current time in cities and time zones worldwide."
+author = "rayslash"
+license = "MIT"
+kind = "wasm"
+repository = "https://github.com/rslauncher/rayslash-module-time"
+official = true
+review_status = "reviewed"
+github_stars = 0
+updated_at = "2026-07-12T05:38:00Z"
+
+[permissions]
+network = ["https://geocoding-api.open-meteo.com"]
+cache = false
+clipboard = false
+notifications = false
+commands = false
+
+[[versions]]
+version = "1.0.1"
+api_version = "^1.0"
+source_commit = "094c41296debdd81323d2641050d75982de17932"
+asset_url = "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.1/rayslash.time-1.0.1.tar.zst"
+sha256 = "c14e175744d693f39fd7d03250f8116690978872440b167bb9db17139455eb38"
+size = 128811
+yanked = false
