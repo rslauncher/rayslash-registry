@@ -1,0 +1,27 @@
+id = "rayslash.web-search"
+name = "Web Search"
+description = "Search the web with keyword triggers."
+author = "rayslash"
+license = "MIT"
+kind = "wasm"
+repository = "https://github.com/rslauncher/rayslash-module-web-search"
+official = true
+review_status = "reviewed"
+github_stars = 0
+updated_at = "2026-07-12T05:30:00Z"
+
+[permissions]
+network = []
+cache = false
+clipboard = false
+notifications = false
+commands = false
+
+[[versions]]
+version = "1.0.1"
+api_version = "^1.0"
+source_commit = "6911823f7c11adeae56f6b83e85c8de3c53ed1c7"
+asset_url = "https://github.com/rslauncher/rayslash-module-web-search/releases/download/v1.0.1/rayslash.web-search-1.0.1.tar.zst"
+sha256 = "f178fe227b1adacb34c3dc9b42e1cd161098289439e75ea65a5e051217d18028"
+size = 56348
+yanked = false

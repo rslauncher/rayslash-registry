@@ -1,0 +1,27 @@
+id = "rayslash.currency"
+name = "Currency"
+description = "Convert currencies with cached live rates."
+author = "rayslash"
+license = "MIT"
+kind = "wasm"
+repository = "https://github.com/rslauncher/rayslash-module-currency"
+official = true
+review_status = "reviewed"
+github_stars = 0
+updated_at = "2026-07-12T05:30:00Z"
+
+[permissions]
+network = ["https://api.frankfurter.app"]
+cache = true
+clipboard = false
+notifications = false
+commands = false
+
+[[versions]]
+version = "1.0.1"
+api_version = "^1.0"
+source_commit = "e15bc9b368ed3d8af584e285153994340e0f381f"
+asset_url = "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.1/rayslash.currency-1.0.1.tar.zst"
+sha256 = "38a4555d7308cd92e5dfb1a377470a8f699e73cd20b7dd91978dcc40a629e216"
+size = 61041
+yanked = false

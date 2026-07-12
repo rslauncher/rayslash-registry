@@ -1,0 +1,27 @@
+id = "rayslash.timers"
+name = "Timers"
+description = "Schedule timers, reminders, and power actions."
+author = "rayslash"
+license = "MIT"
+kind = "wasm"
+repository = "https://github.com/rslauncher/rayslash-module-timers"
+official = true
+review_status = "reviewed"
+github_stars = 0
+updated_at = "2026-07-12T05:30:00Z"
+
+[permissions]
+network = []
+cache = false
+clipboard = false
+notifications = true
+commands = true
+
+[[versions]]
+version = "1.0.1"
+api_version = "^1.0"
+source_commit = "f9b2917eba6ad649907184d17fd2b3eebedc3b1d"
+asset_url = "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.1/rayslash.timers-1.0.1.tar.zst"
+sha256 = "3f128da63bca58744e814c5237a4e77df6707f0625b70b0ae0e2f3686d07fee1"
+size = 21126
+yanked = false

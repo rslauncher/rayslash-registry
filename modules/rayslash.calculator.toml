@@ -1,0 +1,27 @@
+id = "rayslash.calculator"
+name = "Calculator"
+description = "Calculate expressions and linear equations."
+author = "rayslash"
+license = "MIT"
+kind = "wasm"
+repository = "https://github.com/rslauncher/rayslash-module-calculator"
+official = true
+review_status = "reviewed"
+github_stars = 0
+updated_at = "2026-07-12T05:30:00Z"
+
+[permissions]
+network = []
+cache = false
+clipboard = false
+notifications = false
+commands = false
+
+[[versions]]
+version = "1.0.2"
+api_version = "^1.0"
+source_commit = "77d1f7d1f8f1903b3f7b41fd17e03e375e64112b"
+asset_url = "https://github.com/rslauncher/rayslash-module-calculator/releases/download/v1.0.2/rayslash.calculator-1.0.2.tar.zst"
+sha256 = "8fc6398816f89ab20c39b61768c912056c8030855243f7e145a1a664fe364b94"
+size = 257746
+yanked = false
