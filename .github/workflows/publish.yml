@@ -31,11 +31,13 @@ jobs:
           RAYSLASH_REGISTRY_SIGNING_KEY: ${{ secrets.RAYSLASH_REGISTRY_SIGNING_KEY }}
       - name: Publish raw fallback branch
         run: |
+          output="$(mktemp -d)"
+          cp -a public/. "$output/"
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git checkout --orphan registry-output
           git rm -rf .
-          cp -a public/. .
+          cp -a "$output/." .
           git add .
           git commit -m "publish registry"
           git push --force origin HEAD:registry
@@ -45,4 +47,3 @@ jobs:
           path: public
       - id: deployment
         uses: actions/deploy-pages@v4
-
