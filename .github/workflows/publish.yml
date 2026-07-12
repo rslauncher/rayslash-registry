@@ -1,0 +1,48 @@
+name: Publish registry
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: registry-production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    environment:
+      name: registry-production
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo run --locked -- build --fetch --output public
+      - run: cargo run --locked -- sign --root public/v1/root.json
+        env:
+          RAYSLASH_REGISTRY_SIGNING_KEY: ${{ secrets.RAYSLASH_REGISTRY_SIGNING_KEY }}
+      - name: Publish raw fallback branch
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout --orphan registry-output
+          git rm -rf .
+          cp -a public/. .
+          git add .
+          git commit -m "publish registry"
+          git push --force origin HEAD:registry
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - id: deployment
+        uses: actions/deploy-pages@v4
+

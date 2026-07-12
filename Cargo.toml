@@ -1,0 +1,26 @@
+[package]
+name = "rayslash-registry-tool"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/rslauncher/rayslash-registry"
+
+[[bin]]
+name = "rayslash-registry"
+path = "src/main.rs"
+
+[dependencies]
+base64 = "0.22.1"
+chrono = { version = "0.4.42", default-features = false, features = ["clock", "serde"] }
+clap = { version = "4.5.53", features = ["derive", "env"] }
+ed25519-dalek = { version = "2.2.0", features = ["rand_core"] }
+rand = "0.8.5"
+rayslash-module-manifest = { git = "https://github.com/rslauncher/rayslash-module-sdk", rev = "ca2c4ab676e709c3f2f13dd184b8f53bbaf9b5c9" }
+semver = { version = "1.0.27", features = ["serde"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+sha2 = "0.10.9"
+tar = "0.4.44"
+toml = "0.9.8"
+ureq = "3.1.4"
+zstd = "0.13.3"
