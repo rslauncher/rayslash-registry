@@ -25,7 +25,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - run: cargo run --locked -- build --fetch --output public
+      - name: Build registry
+        env:
+          RAYSLASH_REGISTRY_KEY_ID: ${{ vars.RAYSLASH_REGISTRY_KEY_ID }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: cargo run --locked -- build --fetch --output public --key-id "${RAYSLASH_REGISTRY_KEY_ID:-registry-2026-01}"
       - run: cargo run --locked -- sign --root public/v1/root.json
         env:
           RAYSLASH_REGISTRY_SIGNING_KEY: ${{ secrets.RAYSLASH_REGISTRY_SIGNING_KEY }}

@@ -8,6 +8,24 @@ This repository is the reviewed source for the signed static rayslash module cat
 - Installed clients retain their last verified cache.
 
 See [MODERATION.md](MODERATION.md) and the [module SDK](https://github.com/rslauncher/rayslash-module-sdk).
+Maintainer incident, revocation, and signing-key procedures are in [RUNBOOK.md](RUNBOOK.md).
+
+API v1 accepts WASM modules. The `declarative` kind is reserved until a future API defines a complete format and runtime.
+
+## Emergency revocation
+
+Add an exact package identity to `revocations.toml` and open a pull request:
+
+```toml
+[[revoked]]
+module_id = "io.github.owner.module"
+version = "1.2.3"
+sha256 = "64-lowercase-hex-characters"
+reason = "Concise user-facing security reason."
+revoked_at = "2026-07-12T12:00:00Z"
+```
+
+The protected publish workflow signs the digest of `revocations.json` in the registry root. Clients refuse that exact package at install time and execution time. Do not reuse a revoked version number or release asset.
 
 ## Maintainer bootstrap
 

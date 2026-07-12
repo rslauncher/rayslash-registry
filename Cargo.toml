@@ -15,7 +15,7 @@ chrono = { version = "0.4.42", default-features = false, features = ["clock", "s
 clap = { version = "4.5.53", features = ["derive", "env"] }
 ed25519-dalek = { version = "2.2.0", features = ["rand_core"] }
 rand = "0.8.5"
-rayslash-module-manifest = { git = "https://github.com/rslauncher/rayslash-module-sdk", rev = "ca2c4ab676e709c3f2f13dd184b8f53bbaf9b5c9" }
+rayslash-module-manifest = { git = "https://github.com/rslauncher/rayslash-module-sdk", rev = "3c3e6b6c52bde4b9509a9b3702d8f46b2ced14bc" }
 semver = { version = "1.0.27", features = ["serde"] }
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.145"
