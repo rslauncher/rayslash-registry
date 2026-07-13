@@ -10,13 +10,6 @@ review_status = "reviewed"
 github_stars = 0
 updated_at = "2026-07-12T05:38:00Z"
 
-[permissions]
-network = ["https://geocoding-api.open-meteo.com"]
-cache = false
-clipboard = false
-notifications = false
-commands = false
-
 [[versions]]
 version = "1.0.1"
 api_version = "^1.0"
@@ -25,3 +18,4 @@ asset_url = "https://github.com/rslauncher/rayslash-module-time/releases/downloa
 sha256 = "c14e175744d693f39fd7d03250f8116690978872440b167bb9db17139455eb38"
 size = 128811
 yanked = false
+permissions = { network = ["https://geocoding-api.open-meteo.com"], cache = false, clipboard = false, notifications = false, commands = false }
