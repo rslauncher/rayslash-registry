@@ -10,13 +10,6 @@ review_status = "reviewed"
 github_stars = 0
 updated_at = "2026-07-12T05:30:00Z"
 
-[permissions]
-network = ["https://api.frankfurter.app"]
-cache = true
-clipboard = false
-notifications = false
-commands = false
-
 [[versions]]
 version = "1.0.1"
 api_version = "^1.0"
@@ -25,3 +18,14 @@ asset_url = "https://github.com/rslauncher/rayslash-module-currency/releases/dow
 sha256 = "38a4555d7308cd92e5dfb1a377470a8f699e73cd20b7dd91978dcc40a629e216"
 size = 61041
 yanked = false
+permissions = { network = ["https://api.frankfurter.app"], cache = true, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.2"
+api_version = "^1.0"
+source_commit = "02c4b78b55859cd56dcd422fb8916a2b69347e4c"
+asset_url = "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.2/rayslash.currency-1.0.2.tar.zst"
+sha256 = "bca754b037938b407e41c7425cec864b347abfe71b7d3236db8610fe5c45fa2b"
+size = 65465
+yanked = false
+permissions = { network = ["https://api.frankfurter.dev"], cache = true, clipboard = false, notifications = false, commands = false }

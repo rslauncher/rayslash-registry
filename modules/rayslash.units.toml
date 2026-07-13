@@ -10,13 +10,6 @@ review_status = "reviewed"
 github_stars = 0
 updated_at = "2026-07-12T05:30:00Z"
 
-[permissions]
-network = []
-cache = false
-clipboard = false
-notifications = false
-commands = false
-
 [[versions]]
 version = "1.0.2"
 api_version = "^1.0"
@@ -25,3 +18,4 @@ asset_url = "https://github.com/rslauncher/rayslash-module-units/releases/downlo
 sha256 = "cc4f922d06d00e60e1de63866e86d1a9890ad6acc35f68822b532a0b4d5a0ce2"
 size = 41699
 yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }

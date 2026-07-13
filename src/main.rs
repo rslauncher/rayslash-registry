@@ -15,7 +15,7 @@ use semver::{Version, VersionReq};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
-const SCHEMA_VERSION: u32 = 1;
+const SCHEMA_VERSION: u32 = 2;
 
 #[derive(Parser)]
 #[command(name = "rayslash-registry", version)]
@@ -39,6 +39,9 @@ enum Command {
         key_id: String,
         #[arg(long)]
         fetch: bool,
+        /// Allow an HTTP 127.0.0.1 base URL for isolated development verification.
+        #[arg(long)]
+        allow_insecure_loopback: bool,
     },
     Sign {
         #[arg(long, default_value = "public/v1/root.json")]
@@ -69,7 +72,6 @@ struct Submission {
     author: String,
     license: String,
     kind: ModuleKind,
-    permissions: Permissions,
     repository: String,
     official: bool,
     review_status: ReviewStatus,
@@ -96,6 +98,7 @@ struct SubmittedVersion {
     sha256: String,
     size: u64,
     yanked: bool,
+    permissions: Permissions,
 }
 
 #[derive(Debug, Serialize)]
@@ -155,7 +158,16 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
             base_url,
             key_id,
             fetch,
-        } => build(&modules, &revocations, &output, &base_url, &key_id, fetch)?,
+            allow_insecure_loopback,
+        } => build(
+            &modules,
+            &revocations,
+            &output,
+            &base_url,
+            &key_id,
+            fetch,
+            allow_insecure_loopback,
+        )?,
         Command::Sign { root, private_key } => sign(&root, &private_key)?,
         Command::Verify { root, public_key } => verify(&root, &public_key)?,
         Command::Keygen { key_id, output } => keygen(&key_id, &output)?,
@@ -170,8 +182,11 @@ fn build(
     base_url: &str,
     key_id: &str,
     fetch: bool,
+    allow_insecure_loopback: bool,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    if !base_url.starts_with("https://") {
+    if !(base_url.starts_with("https://")
+        || allow_insecure_loopback && base_url.starts_with("http://127.0.0.1:"))
+    {
         return Err("base URL must use HTTPS".into());
     }
     let mut modules = Vec::new();
@@ -444,7 +459,7 @@ fn validate_remote_package(
         || manifest.author != submission.author
         || manifest.license != submission.license
         || manifest.kind != submission.kind
-        || manifest.permissions != submission.permissions
+        || manifest.permissions != version.permissions
         || manifest.version != version.version
         || manifest.api_version != version.api_version
         || manifest.source != submission.repository
@@ -562,6 +577,7 @@ mod tests {
             &base.join("public"),
             "https://example.test",
             "test-key",
+            false,
             false,
         )
         .unwrap();
