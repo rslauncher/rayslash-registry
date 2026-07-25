@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-aliases"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-07-12T05:30:00Z"
+updated_at = "2026-07-25T20:57:55Z"
 
 [[versions]]
 version = "1.0.1"
@@ -17,5 +17,15 @@ source_commit = "9e224667a53e5e528fcbcd9ef2ba48c23163f65f"
 asset_url = "https://github.com/rslauncher/rayslash-module-aliases/releases/download/v1.0.1/rayslash.aliases-1.0.1.tar.zst"
 sha256 = "78bb32496b67b460c7530af3cc706199abb1005d082222382cb59f3981e9cf0d"
 size = 58238
+yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = true }
+
+[[versions]]
+version = "1.0.2"
+api_version = "^1.0"
+source_commit = "cef73862eeaf908fb61a0adfb7c9d65cb6350e7e"
+asset_url = "https://github.com/rslauncher/rayslash-module-aliases/releases/download/v1.0.2/rayslash.aliases-1.0.2.tar.zst"
+sha256 = "ecbf9893a0029b3f939fe0f770acdc07fc1825394f910847e2b95211fc812f04"
+size = 48762
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = true }

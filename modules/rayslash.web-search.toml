@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-web-search"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-07-12T05:30:00Z"
+updated_at = "2026-07-25T20:58:17Z"
 
 [[versions]]
 version = "1.0.1"
@@ -17,5 +17,15 @@ source_commit = "6911823f7c11adeae56f6b83e85c8de3c53ed1c7"
 asset_url = "https://github.com/rslauncher/rayslash-module-web-search/releases/download/v1.0.1/rayslash.web-search-1.0.1.tar.zst"
 sha256 = "f178fe227b1adacb34c3dc9b42e1cd161098289439e75ea65a5e051217d18028"
 size = 56348
+yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.2"
+api_version = "^1.0"
+source_commit = "a96f51478a1783dad109e1ee195b999bcdeee751"
+asset_url = "https://github.com/rslauncher/rayslash-module-web-search/releases/download/v1.0.2/rayslash.web-search-1.0.2.tar.zst"
+sha256 = "6f5145dfeeafa3df54d925b1c1663d00b3f57791dd4152071dca6e7b6b6b9855"
+size = 47785
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
