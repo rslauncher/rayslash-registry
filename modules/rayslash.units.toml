@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-units"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-07-25T20:56:53Z"
+updated_at = "2026-07-26T14:56:36Z"
 
 [[versions]]
 version = "1.0.2"
@@ -27,5 +27,15 @@ source_commit = "7a8cc56b38618dd83217ce82a1b533bde18dd089"
 asset_url = "https://github.com/rslauncher/rayslash-module-units/releases/download/v1.0.3/rayslash.units-1.0.3.tar.zst"
 sha256 = "1ae01a11585f56a4cccca55d3d19b742a34b9c72e5bf7a9699e6c59d646c77ae"
 size = 36289
+yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.4"
+api_version = "^1.0"
+source_commit = "b2a2b060c620ca06fc316fe76056ec9b4f8ddcde"
+asset_url = "https://github.com/rslauncher/rayslash-module-units/releases/download/v1.0.4/rayslash.units-1.0.4.tar.zst"
+sha256 = "d7394e76dc99d3ec1f1ef0bf1e1996fb51e3d5090c63ba614f7a41ac1de22871"
+size = 40286
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
