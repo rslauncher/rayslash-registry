@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-timers"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-07-26T14:36:43Z"
+updated_at = "2026-07-26T23:43:00Z"
 
 [[versions]]
 version = "1.0.1"
@@ -47,5 +47,15 @@ source_commit = "6cb4e1071ae799405599c94f51e3d728d4c1e182"
 asset_url = "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.4/rayslash.timers-1.0.4.tar.zst"
 sha256 = "a563a7ad42472b9dab52e944a39e431002dd14d33a9931a91c76901dded56020"
 size = 21066
+yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = true, commands = true }
+
+[[versions]]
+version = "1.0.5"
+api_version = "^1.0"
+source_commit = "9e762e278b435fc11e7e3963c3bd8b160cbe6871"
+asset_url = "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.5/rayslash.timers-1.0.5.tar.zst"
+sha256 = "84779104a325d1d7fb0eb72e0e01d946033d9e9f0497575562121d0c94392e95"
+size = 21091
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = true, commands = true }
