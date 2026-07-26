@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-calculator"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-07-25T21:00:27Z"
+updated_at = "2026-07-26T14:34:51Z"
 
 [[versions]]
 version = "1.0.2"
@@ -27,5 +27,15 @@ source_commit = "1bbedf0eaaa069b249038422f2736410d2e95b01"
 asset_url = "https://github.com/rslauncher/rayslash-module-calculator/releases/download/v1.0.3/rayslash.calculator-1.0.3.tar.zst"
 sha256 = "348bce9763e978fbc0578970585af1abe1fa5b7d909ee86fbb3e1946b3c652b7"
 size = 181044
+yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.4"
+api_version = "^1.0"
+source_commit = "18eeacc7506a4fd50199610a02a709b6ec59581e"
+asset_url = "https://github.com/rslauncher/rayslash-module-calculator/releases/download/v1.0.4/rayslash.calculator-1.0.4.tar.zst"
+sha256 = "459e7abcf349ed0b542b84fde89fa90e2cb96e488913749b8b56c1d33d2d6901"
+size = 180614
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
