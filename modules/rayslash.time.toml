@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-time"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-07-26T14:36:35Z"
+updated_at = "2026-07-26T23:43:06Z"
 
 [[versions]]
 version = "1.0.1"
@@ -37,5 +37,15 @@ source_commit = "8fe8be1bbd19cdb11e5b558d663fe614d536910f"
 asset_url = "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.3/rayslash.time-1.0.3.tar.zst"
 sha256 = "78709d345bc79f95c8d050f88de44974cbe35852a3dbb97ce2cbdd00d6ef3a33"
 size = 142527
+yanked = false
+permissions = { network = ["https://geocoding-api.open-meteo.com"], cache = true, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.4"
+api_version = "^1.0"
+source_commit = "6b064537072fbcef3e0a59fa5e0ba28eb80b2da9"
+asset_url = "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.4/rayslash.time-1.0.4.tar.zst"
+sha256 = "c0607bc2a15931e8fe0b3f99dc8e7d7c6ab203f00a6ae862ecdf44fc5b7d2586"
+size = 145683
 yanked = false
 permissions = { network = ["https://geocoding-api.open-meteo.com"], cache = true, clipboard = false, notifications = false, commands = false }
