@@ -15,7 +15,7 @@ version = "1.0.0"
 api_version = "^1.0"
 source_commit = "3ac894b858665355f4f30cd3d8460593c8455e06"
 asset_url = "https://github.com/rslauncher/rayslash-module-text-counter/releases/download/v1.0.0/rayslash.text-counter-1.0.0.tar.zst"
-sha256 = "406b43c0371b64bbea0f8631aaa274daea5133ebaeb7fbda68bda2b86c275a37"
-size = 35733
+sha256 = "6afc76a7db5be90819ca423d0624058f545b5d3b364a03d7a6ff56863b2b519b"
+size = 37124
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
