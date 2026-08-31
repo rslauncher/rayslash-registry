@@ -1,0 +1,560 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-31T14:13:56.375882988Z",
+  "modules": [
+    {
+      "id": "rayslash.aliases",
+      "name": "Aliases",
+      "description": "Open quick links, files, folders, and explicit commands.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-aliases",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-25T20:52:03Z",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "api_version": "^1.0",
+          "source_commit": "9e224667a53e5e528fcbcd9ef2ba48c23163f65f",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-aliases/releases/download/v1.0.1/rayslash.aliases-1.0.1.tar.zst",
+          "sha256": "78bb32496b67b460c7530af3cc706199abb1005d082222382cb59f3981e9cf0d",
+          "size": 58238,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": true
+          }
+        },
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "cef73862eeaf908fb61a0adfb7c9d65cb6350e7e",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-aliases/releases/download/v1.0.2/rayslash.aliases-1.0.2.tar.zst",
+          "sha256": "ecbf9893a0029b3f939fe0f770acdc07fc1825394f910847e2b95211fc812f04",
+          "size": 48762,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.calculator",
+      "name": "Calculator",
+      "description": "Calculate expressions and linear equations.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-calculator",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-26T14:30:33Z",
+      "versions": [
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "77d1f7d1f8f1903b3f7b41fd17e03e375e64112b",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-calculator/releases/download/v1.0.2/rayslash.calculator-1.0.2.tar.zst",
+          "sha256": "8fc6398816f89ab20c39b61768c912056c8030855243f7e145a1a664fe364b94",
+          "size": 257746,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.3",
+          "api_version": "^1.0",
+          "source_commit": "1bbedf0eaaa069b249038422f2736410d2e95b01",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-calculator/releases/download/v1.0.3/rayslash.calculator-1.0.3.tar.zst",
+          "sha256": "348bce9763e978fbc0578970585af1abe1fa5b7d909ee86fbb3e1946b3c652b7",
+          "size": 181044,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.4",
+          "api_version": "^1.0",
+          "source_commit": "18eeacc7506a4fd50199610a02a709b6ec59581e",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-calculator/releases/download/v1.0.4/rayslash.calculator-1.0.4.tar.zst",
+          "sha256": "459e7abcf349ed0b542b84fde89fa90e2cb96e488913749b8b56c1d33d2d6901",
+          "size": 180614,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.currency",
+      "name": "Currency",
+      "description": "Convert currencies with cached live rates.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-currency",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-26T23:37:14Z",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "api_version": "^1.0",
+          "source_commit": "e15bc9b368ed3d8af584e285153994340e0f381f",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.1/rayslash.currency-1.0.1.tar.zst",
+          "sha256": "38a4555d7308cd92e5dfb1a377470a8f699e73cd20b7dd91978dcc40a629e216",
+          "size": 61041,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://api.frankfurter.app"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "02c4b78b55859cd56dcd422fb8916a2b69347e4c",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.2/rayslash.currency-1.0.2.tar.zst",
+          "sha256": "bca754b037938b407e41c7425cec864b347abfe71b7d3236db8610fe5c45fa2b",
+          "size": 65465,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://api.frankfurter.dev"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.3",
+          "api_version": "^1.0",
+          "source_commit": "389c135f814338f31d9bc1585b478508824daebe",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.3/rayslash.currency-1.0.3.tar.zst",
+          "sha256": "e325a5802f061c8fcdda7dec8e66b80d81ab9ecd1875e18ff5091acabe6328c0",
+          "size": 56565,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://api.frankfurter.dev"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.4",
+          "api_version": "^1.0",
+          "source_commit": "cb8cc8e89d774d628d9da9249f22cfd5098bb4a0",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.4/rayslash.currency-1.0.4.tar.zst",
+          "sha256": "d00f0f3cb3a59384fc47a9bdf72b84e954c83f1aae40ed46b975ac52c94d6541",
+          "size": 56434,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://api.frankfurter.dev"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.5",
+          "api_version": "^1.0",
+          "source_commit": "a14de1032f9c2c3cbbb6fdcfae52af95614ccf4c",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.5/rayslash.currency-1.0.5.tar.zst",
+          "sha256": "64bc37f433009440d390364114d6d9667be9778725bcf732435004e6fdbfa6e0",
+          "size": 57504,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://api.frankfurter.dev"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.text-counter",
+      "name": "Text Counter",
+      "description": "Count words, characters, lines, and bytes in text.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-text-counter",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-08-31T14:09:11Z",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "api_version": "^1.0",
+          "source_commit": "3ac894b858665355f4f30cd3d8460593c8455e06",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-text-counter/releases/download/v1.0.0/rayslash.text-counter-1.0.0.tar.zst",
+          "sha256": "6afc76a7db5be90819ca423d0624058f545b5d3b364a03d7a6ff56863b2b519b",
+          "size": 37124,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.1",
+          "api_version": "^1.0",
+          "source_commit": "22bf6fa83afe8141a54a63f4eb597bd0ace30ed4",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-text-counter/releases/download/v1.0.1/rayslash.text-counter-1.0.1.tar.zst",
+          "sha256": "8aa7a996a3d8763b5da3b001512a38ccb4a1ddf4987924ae3abf0915868eea2b",
+          "size": 37140,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.time",
+      "name": "Time",
+      "description": "Show the current time in cities and time zones worldwide.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-time",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-26T23:37:17Z",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "api_version": "^1.0",
+          "source_commit": "094c41296debdd81323d2641050d75982de17932",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.1/rayslash.time-1.0.1.tar.zst",
+          "sha256": "c14e175744d693f39fd7d03250f8116690978872440b167bb9db17139455eb38",
+          "size": 128811,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://geocoding-api.open-meteo.com"
+            ],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "bab62b00d6fdc318097c4f829f12e70dd9a13fa7",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.2/rayslash.time-1.0.2.tar.zst",
+          "sha256": "a488757669d7bfdc8c56bff6502bad0525b0c55e0c91344fb1986dec122d560c",
+          "size": 124258,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://geocoding-api.open-meteo.com"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.3",
+          "api_version": "^1.0",
+          "source_commit": "8fe8be1bbd19cdb11e5b558d663fe614d536910f",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.3/rayslash.time-1.0.3.tar.zst",
+          "sha256": "78709d345bc79f95c8d050f88de44974cbe35852a3dbb97ce2cbdd00d6ef3a33",
+          "size": 142527,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://geocoding-api.open-meteo.com"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.4",
+          "api_version": "^1.0",
+          "source_commit": "6b064537072fbcef3e0a59fa5e0ba28eb80b2da9",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-time/releases/download/v1.0.4/rayslash.time-1.0.4.tar.zst",
+          "sha256": "c0607bc2a15931e8fe0b3f99dc8e7d7c6ab203f00a6ae862ecdf44fc5b7d2586",
+          "size": 145683,
+          "yanked": false,
+          "permissions": {
+            "network": [
+              "https://geocoding-api.open-meteo.com"
+            ],
+            "cache": true,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.timers",
+      "name": "Timers",
+      "description": "Schedule timers, reminders, and power actions.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-timers",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-26T23:37:20Z",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "api_version": "^1.0",
+          "source_commit": "f9b2917eba6ad649907184d17fd2b3eebedc3b1d",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.1/rayslash.timers-1.0.1.tar.zst",
+          "sha256": "3f128da63bca58744e814c5237a4e77df6707f0625b70b0ae0e2f3686d07fee1",
+          "size": 21126,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": true,
+            "commands": true
+          }
+        },
+        {
+          "version": "1.0.3",
+          "api_version": "^1.0",
+          "source_commit": "c0ca37293b9696e48034983fdedf744da8b86384",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.3/rayslash.timers-1.0.3.tar.zst",
+          "sha256": "e2c4ec21ecbf4b20251b22d99384fecfa960e1abf83e3cf6f868aedefe133299",
+          "size": 19563,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": true,
+            "commands": true
+          }
+        },
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "c2032c72402d0c51ac5ab764d7a8796912b5f783",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.2/rayslash.timers-1.0.2.tar.zst",
+          "sha256": "35d71cdc8993339bc230eb5cfc52b99f3bd367651a493972701c6dad9a40cf06",
+          "size": 23615,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": true,
+            "commands": true
+          }
+        },
+        {
+          "version": "1.0.4",
+          "api_version": "^1.0",
+          "source_commit": "6cb4e1071ae799405599c94f51e3d728d4c1e182",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.4/rayslash.timers-1.0.4.tar.zst",
+          "sha256": "a563a7ad42472b9dab52e944a39e431002dd14d33a9931a91c76901dded56020",
+          "size": 21066,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": true,
+            "commands": true
+          }
+        },
+        {
+          "version": "1.0.5",
+          "api_version": "^1.0",
+          "source_commit": "9e762e278b435fc11e7e3963c3bd8b160cbe6871",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-timers/releases/download/v1.0.5/rayslash.timers-1.0.5.tar.zst",
+          "sha256": "84779104a325d1d7fb0eb72e0e01d946033d9e9f0497575562121d0c94392e95",
+          "size": 21091,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": true,
+            "commands": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.units",
+      "name": "Units",
+      "description": "Convert common units locally.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-units",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-26T14:51:11Z",
+      "versions": [
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "0f4a4bdb5efb68ee034c5ca62cb426e5f8267b7b",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-units/releases/download/v1.0.2/rayslash.units-1.0.2.tar.zst",
+          "sha256": "cc4f922d06d00e60e1de63866e86d1a9890ad6acc35f68822b532a0b4d5a0ce2",
+          "size": 41699,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.3",
+          "api_version": "^1.0",
+          "source_commit": "7a8cc56b38618dd83217ce82a1b533bde18dd089",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-units/releases/download/v1.0.3/rayslash.units-1.0.3.tar.zst",
+          "sha256": "1ae01a11585f56a4cccca55d3d19b742a34b9c72e5bf7a9699e6c59d646c77ae",
+          "size": 36289,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.4",
+          "api_version": "^1.0",
+          "source_commit": "b2a2b060c620ca06fc316fe76056ec9b4f8ddcde",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-units/releases/download/v1.0.4/rayslash.units-1.0.4.tar.zst",
+          "sha256": "d7394e76dc99d3ec1f1ef0bf1e1996fb51e3d5090c63ba614f7a41ac1de22871",
+          "size": 40286,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "rayslash.web-search",
+      "name": "Web Search",
+      "description": "Search the web with keyword triggers.",
+      "author": "rayslash",
+      "license": "MIT",
+      "kind": "wasm",
+      "repository": "https://github.com/rslauncher/rayslash-module-web-search",
+      "official": true,
+      "review_status": "reviewed",
+      "github_stars": 0,
+      "updated_at": "2026-07-25T20:52:17Z",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "api_version": "^1.0",
+          "source_commit": "6911823f7c11adeae56f6b83e85c8de3c53ed1c7",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-web-search/releases/download/v1.0.1/rayslash.web-search-1.0.1.tar.zst",
+          "sha256": "f178fe227b1adacb34c3dc9b42e1cd161098289439e75ea65a5e051217d18028",
+          "size": 56348,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        },
+        {
+          "version": "1.0.2",
+          "api_version": "^1.0",
+          "source_commit": "a96f51478a1783dad109e1ee195b999bcdeee751",
+          "asset_url": "https://github.com/rslauncher/rayslash-module-web-search/releases/download/v1.0.2/rayslash.web-search-1.0.2.tar.zst",
+          "sha256": "6f5145dfeeafa3df54d925b1c1663d00b3f57791dd4152071dca6e7b6b6b9855",
+          "size": 47785,
+          "yanked": false,
+          "permissions": {
+            "network": [],
+            "cache": false,
+            "clipboard": false,
+            "notifications": false,
+            "commands": false
+          }
+        }
+      ]
+    }
+  ]
+}
