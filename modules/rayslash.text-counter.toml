@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-text-counter"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-08-30T00:00:00Z"
+updated_at = "2026-08-31T00:00:00Z"
 
 [[versions]]
 version = "1.0.0"
@@ -17,5 +17,15 @@ source_commit = "3ac894b858665355f4f30cd3d8460593c8455e06"
 asset_url = "https://github.com/rslauncher/rayslash-module-text-counter/releases/download/v1.0.0/rayslash.text-counter-1.0.0.tar.zst"
 sha256 = "6afc76a7db5be90819ca423d0624058f545b5d3b364a03d7a6ff56863b2b519b"
 size = 37124
+yanked = false
+permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.1"
+api_version = "^1.0"
+source_commit = "22bf6fa83afe8141a54a63f4eb597bd0ace30ed4"
+asset_url = "https://github.com/rslauncher/rayslash-module-text-counter/releases/download/v1.0.1/rayslash.text-counter-1.0.1.tar.zst"
+sha256 = "8aa7a996a3d8763b5da3b001512a38ccb4a1ddf4987924ae3abf0915868eea2b"
+size = 37140
 yanked = false
 permissions = { network = [], cache = false, clipboard = false, notifications = false, commands = false }
