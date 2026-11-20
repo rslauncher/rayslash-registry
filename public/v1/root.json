@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-11-20T19:06:01.058980943Z",
+  "key_id": "registry-2026-01",
+  "index_url": "https://rslauncher.github.io/rayslash-registry/v1/index.json",
+  "index_sha256": "37d0bcf03a74c7ffc7e31617420b4b6b833e50bd3120b30454dae3ea84587daa",
+  "revocations_url": "https://rslauncher.github.io/rayslash-registry/v1/revocations.json",
+  "revocations_sha256": "90d443bf0162b1275ce994d61cefba699acdb1c302e6ba6eecda91eeb53fc702"
+}
