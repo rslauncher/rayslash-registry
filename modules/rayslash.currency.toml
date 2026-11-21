@@ -8,7 +8,7 @@ repository = "https://github.com/rslauncher/rayslash-module-currency"
 official = true
 review_status = "reviewed"
 github_stars = 0
-updated_at = "2026-11-20T18:55:32Z"
+updated_at = "2026-11-21T16:15:23Z"
 
 [[versions]]
 version = "1.0.1"
@@ -67,5 +67,15 @@ source_commit = "a45490f539b9ba98699566b2e036c329ea01d96c"
 asset_url = "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.6/rayslash.currency-1.0.6.tar.zst"
 sha256 = "f5fec32958eabfa58ef6d68bbc38b5a7eaf059269799e175f6664886b30bda02"
 size = 57733
+yanked = false
+permissions = { network = ["https://api.frankfurter.dev"], cache = true, clipboard = false, notifications = false, commands = false }
+
+[[versions]]
+version = "1.0.7"
+api_version = "^1.0"
+source_commit = "0e431de791338fd361de8b5a768586d7d738103d"
+asset_url = "https://github.com/rslauncher/rayslash-module-currency/releases/download/v1.0.7/rayslash.currency-1.0.7.tar.zst"
+sha256 = "9344c425a5e228c46aa1beaa180c27d837b44da9d420f8424daa3c454e621b85"
+size = 57873
 yanked = false
 permissions = { network = ["https://api.frankfurter.dev"], cache = true, clipboard = false, notifications = false, commands = false }
